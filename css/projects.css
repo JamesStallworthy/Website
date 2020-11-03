@@ -17,12 +17,18 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 20vw;
-    min-width: 500px;
+    width: 500px;
     height: 250px;
     margin: 20px;
     background-color: #353535;
     box-shadow: 0.2rem 0.2rem 0.2rem rgb(25 102 150);
+}
+
+@media (max-width: 600px)
+{
+    .project-card {
+        width: 80vw;
+    }
 }
 
 .profileImg {
