@@ -85,6 +85,10 @@ body {
   }
 }
 
+.nav-link.active{
+  box-shadow: 0 15px 15px -10px rgb(25 102 150);
+}
+
 
 /*
  * Cover

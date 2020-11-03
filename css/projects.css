@@ -1,5 +1,6 @@
 body{
     height: unset;
+    width: 100vw;
 }
 
 .inner.cover{
@@ -27,7 +28,7 @@ body{
 @media (max-width: 600px)
 {
     .project-card {
-        width: 80vw;
+        width: 75vw;
     }
 }
 

@@ -36,5 +36,8 @@ $.ajax({
             }
         }
         $(".loading-text").remove()
+    },
+    error(xhr,status,error){
+        $(".loading-text").text("Issue contacting github.com")
     }
 });
