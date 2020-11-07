@@ -1,66 +1,47 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="shortcut icon" href="favicon.ico">
 
-    <link rel="shortcut icon" href="favicon.ico">
+        <title>James Stallworthy</title>
 
-    <title>James Stallworthy</title>
+        <link href="./css/cover.css" rel="stylesheet">
 
-    <link href="./css/cover.css" rel="stylesheet">
-
-    <title>James Stallworthy</title>
-    
-    <meta name="title" content="James Stallworthy">
-    <meta name="description" content="Full Stack Developer at Intelligent Delivery Solutions working on data quality products">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.jamesstallworthy.com/">
-    <meta property="og:title" content="James Stallworthy">
-    <meta property="og:description" content="Full Stack Developer at Intelligent Delivery Solutions working on data quality products">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.jamesstallworthy.com/">
-    <meta property="twitter:title" content="James Stallworthy">
-    <meta property="twitter:description" content="Full Stack Developer at Intelligent Delivery Solutions working on data quality products">
-</head>
-
-<body class="text-center">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="masthead mb-auto">
-            <div class="inner">
-                <h3 class="masthead-brand">James Stallworthy</h3>
-                <nav class="nav nav-masthead justify-content-center">
-                    <!---https://fontawesome.com/license--->
-                    <a class="nav-link active" href="index.html"><img src="./Home.svg" style="width:30px;height:30px"> Home</a>
-                    <a class="nav-link" href="flying.html"><img src="./Flying.svg" style="width:30px;height:30px"> Flying</a>
-                    <a class="nav-link" href="projects.html"><img src="./Github.svg" style="width:30px;height:30px"> Projects</a>
-                </nav>
-            </div>
-        </header>
-
-        <main role="main" class="inner cover">
-            <h1 class="cover-heading">James Stallworthy</h1>
-            <br>
-            <p class="lead">Full Stack Developer at Intelligent Delivery Solutions working on data quality products</p>
-            <p class="lead">Student Private Pilot on the weekends</p>
-            <p class="lead">
-                <a href="projects.html" class="btn btn-lg btn-secondary">Projects</a>
-                <a href="flying.html" class="btn btn-lg btn-secondary">Flying!</a>
-            </p>
-        </main>
+        <title>James Stallworthy</title>
         
-        <footer class="mastfoot mt-auto">
-            <div class="inner">
-                <p>Thank you bootstrap for making my life easier: <a href="https://getbootstrap.com/">Bootstrap</a>.</p>
-                <p>Connect with me on <a href="https://www.linkedin.com/in/james-stallworthy-457515b3/"><img src="Linkedin.svg" style="width:20px;height:20px; margin-top:-5px"></a></p>
-            </div>
-        </footer>
-    </div>
+        <meta name="title" content="James Stallworthy">
+        <meta name="description" content="Full Stack Developer at Intelligent Delivery Solutions working on data quality products">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://www.jamesstallworthy.com/">
+        <meta property="og:title" content="James Stallworthy">
+        <meta property="og:description" content="Full Stack Developer at Intelligent Delivery Solutions working on data quality products">
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://www.jamesstallworthy.com/">
+        <meta property="twitter:title" content="James Stallworthy">
+        <meta property="twitter:description" content="Full Stack Developer at Intelligent Delivery Solutions working on data quality products">
+    
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
 
+    <body class="text-center">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" id="app">
+            <website-header page="Home"></website-header>
+            
+            <home-page-content></home-page-content>
+
+            <website-footer></website-footer>
+        </div>
+    </body>
+
+    <script src="./js/index.js"></script>
 </html>

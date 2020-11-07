@@ -16,57 +16,22 @@
 
         <link href="./css/cover.css" rel="stylesheet">
         <link href="./css/projects.css" rel="stylesheet">
+
         <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
 
     <body class="text-center">
-        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-            <header class="masthead mb-auto">
-                <div class="inner">
-                    <h3 class="masthead-brand">James Stallworthy</h3>
-                    <nav class="nav nav-masthead justify-content-center">
-                        <!---https://fontawesome.com/license--->
-                        <a class="nav-link" href="index.html"><img src="./Home.svg" style="width:30px;height:30px"> Home</a>
-                        <a class="nav-link" href="flying.html"><img src="./Flying.svg" style="width:30px;height:30px"> Flying</a>
-                        <a class="nav-link active" href="projects.html"><img src="./Github.svg" style="width:30px;height:30px"> Projects</a>
-                    </nav>
-                </div>
-            </header>
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" id="app">
+            <website-header page="Projects"></website-header>
 
-            <main role="main">
-                <h1 class="cover-heading">Projects</h1>
-                <br>
-                <a href="https://github.com/JamesStallworthy" class="cover-heading">
-                    <img class="profileImg" src="https://avatars2.githubusercontent.com/u/10096828?s=460&u=14160522ee24fce99dc2653943d8ee09d9811fe8&v=4" alt="ProfileImg"></img>
-                    <br>View on Github
-                </a>
-            </main>
-
-            <!--Projects-->
-            <div class="projects-container" id="app">
-                <h2 class="loading-text">Loading...</h2>
-
-                <div v-for="project in projects">
-                    <div class="card-body project-card">
-                        <h5 class="card-title">{{project.name}}</h5>
-                        <p class="card-text">{{project.desc}}</p>
-                        <div class="card-footer">
-                            <img class="float-left lang-icon" v-bind:src=project.languageIcon v-bind:alt=project.language style="width:35px">
-                            <a v-bind:href=project.link class="btn btn-secondary">View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <footer class="mastfoot mt-auto">
-                <div class="inner">
-                    <p>Thank you bootstrap for making my life easier: <a href="https://getbootstrap.com/">Bootstrap</a>.</p>
-                    <p>Connect with me on <a href="https://www.linkedin.com/in/james-stallworthy-457515b3/"><img src="Linkedin.svg" style="width:20px;height:20px; margin-top:-5px"></a></p>
-                </div>
-            </footer>
+            <projects-page-title></projects-page-title>
+            <projects-page-content></projects-page-content>
+            <website-footer></website-footer>
         </div>
 
         <script src="./js/projects.js"></script>
+        <script src="./js/index.js"></script>
     </body>
 </html>
