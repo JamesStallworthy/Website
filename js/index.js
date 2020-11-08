@@ -17,7 +17,7 @@ Vue.component('website-footer',{
     template:`
         <footer class="mastfoot mt-auto">
             <div class="inner">
-                <p>Thank you bootstrap for making my life easier: <a href="https://getbootstrap.com/">Bootstrap</a>.</p>
+                <p>Built using <a href="https://vuejs.org/">Vue.js</a> and <a href="https://getbootstrap.com/">Bootstrap</a>.</p>
                 <p>Connect with me on <a href="https://www.linkedin.com/in/james-stallworthy-457515b3/"><img src="./icons/Linkedin.svg" style="width:20px;height:20px; margin-top:-5px"></a></p>
             </div>
         </footer>
