@@ -5,7 +5,8 @@ var icons = {
     "C": "./icons/C++.svg",
     "Python": "./icons/python.svg",
     "Go": "./icons/go.svg",
-    "JavaScript": "./icons/javascript.svg"
+    "JavaScript": "./icons/javascript.svg",
+    "Rust": "./icons/rust.svg"
 }
 
 var githubURL = 'https://api.github.com/users/jamesstallworthy/repos?sort=updated'
