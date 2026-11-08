@@ -1,0 +1,148 @@
+/* Palette: cool sky paper, navy ink, and the blue from the
+   original site (Bootstrap link blue) as the single accent. */
+:root {
+    --paper: #eef2f5;
+    --ink: #14213d;
+    --muted: #5b6b82;
+    --rule: #c9d3de;
+    --accent: #007bff;
+
+    --font: "Manrope", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --paper: #0f1a2b;
+        --ink: #e6ecf3;
+        --muted: #93a3b8;
+        --rule: #2a3a52;
+        --accent: #4da3ff;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 1.125rem;
+    line-height: 1.55;
+}
+
+.page {
+    max-width: 38rem;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: clamp(4rem, 14vh, 9rem) 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Intro */
+
+.name {
+    margin: 0;
+    font-size: clamp(2rem, 9vw, 3.9rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+}
+
+.route {
+    position: relative;
+    height: 14px;
+    margin: 1.75rem 0 1.5rem;
+    background: repeating-linear-gradient(90deg, var(--accent) 0 6px, transparent 6px 11px)
+        center / calc(100% - 24px) 2px no-repeat;
+    animation: plot 1.4s cubic-bezier(.6, 0, .2, 1) .2s both;
+}
+
+/* Departure: open circle. Destination: filled waypoint triangle. */
+.route::before,
+.route::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 14px;
+    height: 14px;
+}
+
+.route::before {
+    left: 0;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    background: var(--paper);
+}
+
+.route::after {
+    right: 0;
+    background: var(--accent);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+@keyframes plot {
+    from { clip-path: inset(0 100% 0 0); }
+    to   { clip-path: inset(0 0 0 0); }
+}
+
+.role {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--ink);
+}
+
+.links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.75rem;
+}
+
+a {
+    color: var(--ink);
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+.links a {
+    font-weight: 500;
+}
+
+/* Footer */
+
+.footer {
+    margin-top: auto;
+    padding-top: 4rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+}
+
+.footer p {
+    margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .route {
+        animation: none;
+    }
+}
