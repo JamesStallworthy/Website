@@ -65,6 +65,9 @@ body {
     height: 100%;
     z-index: -1;
     pointer-events: none;
+    /* The SVG has opacity="0" as a fallback so it stays hidden if this
+       stylesheet ever fails to load; CSS overrides it here. */
+    opacity: 1;
     fill: none;
     stroke: currentColor;
     stroke-linecap: round;
