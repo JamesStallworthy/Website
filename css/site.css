@@ -6,6 +6,9 @@
     --muted: #5b6b82;
     --rule: #c9d3de;
     --accent: #007bff;
+    --terrain-opacity: .16;
+    --airspace-opacity: .14;
+    --rail-opacity: .14;
 
     --font: "Manrope", system-ui, sans-serif;
 }
@@ -17,6 +20,9 @@
         --muted: #93a3b8;
         --rule: #2a3a52;
         --accent: #4da3ff;
+        --terrain-opacity: .16;
+        --airspace-opacity: .16;
+        --rail-opacity: .2;
     }
 }
 
@@ -46,6 +52,82 @@ body {
     padding: clamp(4rem, 14vh, 9rem) 1.5rem 2rem;
     display: flex;
     flex-direction: column;
+}
+
+/* Chart background: drawn inline in index.html with currentColor, so the
+   colours follow the theme. It fades in faintly, and is fainter still
+   behind the text so that stays easy to read. */
+
+.chart {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    -webkit-mask-image: radial-gradient(ellipse 42% 38% at 50% 28%, rgba(0, 0, 0, .3), #000);
+    mask-image: radial-gradient(ellipse 42% 38% at 50% 28%, rgba(0, 0, 0, .3), #000);
+    animation: chart-in 2.4s ease .8s both;
+}
+
+.chart text {
+    fill: currentColor;
+    stroke: none;
+    font-family: var(--font);
+    font-weight: 700;
+}
+
+.chart .it {
+    font-style: italic;
+}
+
+.chart .mef {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* CTR with a surface lower limit is tinted; tint banding marks the
+   outer edge of controlled airspace. */
+.chart .surface {
+    fill: currentColor;
+    fill-opacity: .12;
+    stroke: none;
+}
+
+.chart .band {
+    stroke-opacity: .35;
+}
+
+.chart .water {
+    color: var(--accent);
+}
+
+.chart-terrain {
+    color: var(--muted);
+    opacity: var(--terrain-opacity);
+}
+
+.chart-rail {
+    color: var(--ink);
+    opacity: var(--rail-opacity);
+}
+
+.chart .rail-core {
+    stroke: var(--paper);
+}
+
+.chart-airspace {
+    color: var(--accent);
+    opacity: var(--airspace-opacity);
+}
+
+@keyframes chart-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 /* Intro */
@@ -142,7 +224,8 @@ a:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .route {
+    .route,
+    .chart {
         animation: none;
     }
 }
